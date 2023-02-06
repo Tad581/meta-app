@@ -18,18 +18,18 @@
 
 /*  variables and defaul css */
 :root {
-  --primary: #18191a;
-  --accent: #282828;
-  --lighter: #4a4a4a;
-  --blue: rgb(29, 63, 214);
-  --font: rgb(206, 206, 206);
-  --placeholder: rgb(219, 219, 219);
-  --notification: #ff4d4d;
-  --green: rgb(19, 209, 19);
-  --border: #5aa1ff;
-  --border-bottom: #828282;
-  --white: #fff;
-  --base-blue: #1877f2;
+  --primary: #18191a !important;
+  --accent: #282828 !important;
+  --lighter: #4a4a4a !important;
+  --blue: rgb(29, 63, 214) !important;
+  --font: rgb(206, 206, 206) !important;
+  --placeholder: rgb(219, 219, 219) !important;
+  --notification: #ff4d4d !important;
+  --green: rgb(19, 209, 19) !important;
+  --border: #5aa1ff !important;
+  --border-bottom: #828282 !important;
+  --white: #fff !important;
+  --base-blue: #1877f2 !important;
 }
 
 body,
@@ -360,6 +360,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 }
 
 .wrapper .shortcuts {
+  padding-top: 10px;
   position: sticky;
   top: 95px;
   padding-left: 20px;

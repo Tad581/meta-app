@@ -1,9 +1,192 @@
-<h1>Turbo chat</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% if current_user %>
-  <%= link_to "Start Chatting", rooms_path%>
-  <%= button_to "Logout", destroy_user_session_path, method: :delete%>
-<% else %>
-  <%= link_to "Login", new_user_session_path %>
-  <%= link_to "Sign Up", new_user_registration_path %>
-<% end %>
+<%= link_to "Start Chatting", rooms_path%>
+<div class="app-container">
+  <%= render "layouts/navbar" %>
+  <!--content-->
+  <div class="wrapper">
+    <div class="shortcuts">
+      <div class="first-col">
+        <div class="menu-item">
+          <div class="user">
+            <div class="profile">
+              <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+            </div>
+            <h4><%= current_user.name %></h4>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon">
+              <%= image_tag 'icons/shield.svg', alt: ""%>
+            </div>
+            <h4>COVID-19 Information </h4>
+          </div>
+        </div>
+        <div class="menu-item">
+        </div>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon">
+              <%= image_tag 'icons/colored-messenger.svg', alt: ""%>
+            </div>
+            <h4>Messenger </h4>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon">
+              <%= image_tag 'icons/colored-flag.svg', alt: ""%>
+            </div>
+            <h4>Pages </h4>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-row ">
+            <div class="icon more">
+              <%= image_tag 'icons/arrow-down.svg', alt: ""%>
+            </div>
+            <h4>see more </h4>
+          </div>
+        </div>
+      </div>
+      <div class="second-col">
+        <h6 class="title">
+          your shortcuts
+        </h6>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon">
+              <%= image_tag 'stories/st-1.jpeg', alt: ""%>
+            </div>
+            <h4>Designers house </h4>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon">
+              <%= image_tag 'stories/st-2.jpeg', alt: ""%>
+            </div>
+            <h4>Script house </h4>
+          </div>
+          <div class="menu-item">
+            <div class="item-row">
+              <div class="icon">
+                <%= image_tag 'stories/page-1.jpg', alt: ""%>
+              </div>
+              <h4>ui ux Designers workshop </h4>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="item-row">
+              <div class="icon">
+                <%= image_tag 'stories/st-3.jpeg', alt: ""%>
+              </div>
+              <h4>netflix movies recommends </h4>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="item-row">
+              <div class="icon">
+                <%= image_tag 'stories/page-2.jpg', alt: ""%>
+              </div>
+              <h4>the future </h4>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="item-row">
+              <div class="icon">
+                <%= image_tag 'stories/page-3.jpeg', alt: ""%>
+              </div>
+              <h4> smart </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--posts-->
+    <div class="posts">
+      <!--create post-->
+      <div class="timeline">
+        <div class="view create-post">
+          <div class="input">
+            <div class="user">
+              <div class="profile">
+                <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+              </div>
+            </div>
+            <%= link_to 'Bạn đang nghĩ gì', new_post_path, class: "open-post-link" %>
+          </div>
+          <div class="media">
+            <div class="category">
+              <div class="option">
+                <div class="icon">
+                  <%= image_tag 'icons/video-live.svg', alt: ""%>
+                </div>
+                <span>Live video</span>
+              </div>
+              <div class="option">
+                <div class="icon">
+                  <%= image_tag 'icons/photos.svg', alt: ""%>
+                </div>
+                <span>photo/video</span>
+              </div>
+              <div class="option">
+                <div class="icon">
+                  <%= image_tag 'icons/smile.svg', alt: ""%>
+                </div>
+                <span>feeling/activity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--post container-->
+      </div>
+    </div>
+    <!--shortcuts 2 -events and chat- -->
+    <div class="shortcuts shortcuts-2">
+      <div class="second-col first-col">
+        <div class="menu-item">
+          <div class="upper">
+            <h6>Your pages</h6>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon">
+              <%= image_tag 'stories/st-2.jpeg', alt: ""%>
+            </div>
+            <h4>Script house </h4>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon">
+              <%= image_tag 'stories/st-1.jpeg', alt: ""%>
+            </div>
+            <h4>Bibs ui design </h4>
+          </div>
+        </div>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon more">
+              <%= image_tag 'icons/arrow-down.svg', alt: ""%>
+            </div>
+            <h4>see more </h4>
+          </div>
+        </div>
+      </div>
+      <div class="second-col">
+        <h6 class="title">
+          birthdays
+        </h6>
+        <div class="menu-item">
+          <div class="item-row">
+            <div class="icon not-rounded">
+              <%= image_tag 'icons/gift.svg', alt: ""%>
+            </div>
+            <h4>It's Diana Berry's birthday </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
