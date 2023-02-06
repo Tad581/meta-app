@@ -29,6 +29,7 @@
   --border: #5aa1ff;
   --border-bottom: #828282;
   --white: #fff;
+  --base-blue: #1877f2;
 }
 
 body,
@@ -160,10 +161,10 @@ h6.title {
 
 /* nav */
 nav {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 12px 20px 12px 0;
   top: 0;
   position: sticky;
   background-color: var(--accent);
@@ -347,9 +348,15 @@ nav .right-side .user-icons .icon.has-notification::after {
   justify-content: space-between;
   align-items: flex-start;
   height: auto;
-  padding: 20px 25px;
   flex-wrap: nowrap;
   width: 100%;
+}
+
+.wrapper .search-shortcuts {
+  background-color: var(--accent);
+  padding-top: 20px;
+  padding-right: 100px;
+  border-right: 1px solid var(--border-bottom);
 }
 
 .wrapper .shortcuts {
@@ -375,6 +382,9 @@ nav .right-side .user-icons .icon.has-notification::after {
 .wrapper .shortcuts .menu-item .item-row h4 {
   margin: 5px;
 }
+/* .wrapper .shortcuts .first-col, .wrapper .shortcuts .second-col {
+  padding: 10px;
+} */
 
 .wrapper .shortcuts .first-col .menu-item:last-of-type .item-row .icon {
   background-color: var(--lighter);
@@ -420,7 +430,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 /* strories and events */
 .posts {
   width: 50%;
-  padding: 0 30px;
+  padding: 30px;
   position: relative;
 }
 
@@ -851,9 +861,8 @@ nav .right-side .user-icons .icon.has-notification::after {
   width: fit-content;
   height: fit-content;
   background-color: var(--lighter);
-  border-radius: 20px;
-  /* padding: 12px; */
-  padding-right: 20px;
+  border-radius: 15px;
+  padding: 5px 20px 5px 0;
   margin: 10px 0 0 10px;
   display: flex;
   flex-direction: column;
@@ -863,9 +872,10 @@ nav .right-side .user-icons .icon.has-notification::after {
 
 .posts .view .view-post .comment-list .comment-box .comment-content h4,
 .posts .view .view-post .comment-list .comment-box .comment-content p {
+  text-transform: capitalize;
   font-size: 15px;
   color: var(--white);
-  margin: 8px 0 0 20px;
+  margin: 0 0 0 15px;
 }
 
 .posts .view .view-post .write-comment .input input {
@@ -1134,7 +1144,9 @@ Login page
 }
 
 /* .form-box .new-account-button {
+
 }
+
 .form-box .create-btn a {
     color: #fff;
     font-size: 16px;
@@ -1419,6 +1431,138 @@ Custom
   color: red;
 }
 
+.search-wrapper {
+  justify-content: flex-start !important;
+}
+
+.search-icon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 10px;
+  top: 13px;
+  margin-right: 5px;
+}
+
+.search-list {
+  position: absolute;
+  inset: 60px 30% auto;
+  padding: 30px 50px 40px 100px;
+}
+
+.search-online {
+  border: none !important;
+}
+
+.search-title {
+  font-size: 20px !important;
+}
+
+.search-list .view {
+  background-color: var(--accent);
+  padding: 0 !important;
+  border-radius: 10px;
+}
+
+.search-list .timeline .view .wrapper .shortcuts {
+  width: 100%;
+}
+
+.search-list .timeline .view .wrapper .shortcuts .second-col {
+  width: 100%;
+}
+
+.search-user {
+  /* width: 100%; */
+  border-top: 1px solid var(--lighter);
+  padding-top: 10px;
+}
+
+.friend-follow {
+  position: absolute;
+  inset: 20px 20px auto auto;
+  width: 36px;
+  height: 36px;
+  border: 50%;
+  background-color: var(--accent);
+}
+
+.friend-follow a {
+  color: transparent;
+  position: absolute;
+  font-size: 15px;
+  right: 10px;
+  top: 5px;
+}
+
+.friend-follow a:hover {
+  color: transparent !important;
+}
+
+.search-col {
+  width: calc(100% + 90px);
+  padding: 10px;
+}
+
+.search-col h6 {
+  text-transform: none !important;
+  font-size: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-bottom);
+}
+
+.icon-second {
+  border-radius: 100px !important;
+  background-color: var(--lighter);
+}
+
+.icon-second img {
+  margin: auto;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.search-wrapper .search-shortcuts {
+  min-height: 100vh;
+  padding-left: 0px !important;
+  min-width: 25vw;
+}
+
+.search-wrapper .search-shortcuts .menu-item {
+  padding: 5px;
+  margin-bottom: 0 !important;
+}
+
+.search-wrapper .search-shortcuts .search-col .active {
+  background-color: var(--lighter);
+  border-radius: 10px;
+}
+
+.search-wrapper .search-shortcuts .search-col .active .item-row {
+  margin-top: 0;
+}
+
+.search-wrapper .search-shortcuts .search-col .active .item-row .icon-second {
+  background-color: var(--base-blue);
+}
+
+.wrapper .shortcuts .first-col .menu-item .item-row a {
+  display: flex;
+  width: 100%;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 0.88rem;
+  text-transform: capitalize;
+}
+
+.wrapper .shortcuts .first-col .menu-item .item-row a img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  margin-right: 18px;
+  margin-top: -3px;
+}
+
 /*=======================
 Create Post
 ========================*/
@@ -1439,4 +1583,87 @@ Create Post
 .new-post .create-post-area .title {
   font-size: 50px;
   color: var(--white);
+}
+
+/*=======================
+Friend List
+========================*/
+.app-container .friend-list {
+  position: absolute;
+  right: 0;
+  top: 130px;
+  height: auto;
+  width: 70%;
+}
+
+.app-container .friend-list h4 {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.app-container .friend-list .detail-list {
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-right: 20px;
+}
+
+.app-container .friend-list .detail-list .profile {
+  width: 100%;
+  height: auto;
+  background-color: var(--accent);
+  border: 1px solid var(--border-bottom);
+  border-radius: 8px;
+}
+
+.app-container .friend-list .detail-list .profile .avatar {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.app-container .friend-list .detail-list .profile h4 {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 10px auto 5px 10px;
+}
+
+.app-container .friend-list .detail-list .profile .button-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container .friend-list .detail-list .profile .button-area .confirm {
+  width: 90%;
+  background-color: #166fe5;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 600;
+  font-weight: 600;
+  padding: 5px 0;
+}
+
+.app-container .friend-list .detail-list .profile .button-area .delete {
+  width: 90%;
+  background-color: var(--lighter);
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 600;
+  padding: 5px 0;
 }

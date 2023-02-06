@@ -1,0 +1,88 @@
+<nav>
+  <!--logo and search-->
+  <div class="left-side">
+    <div class="logo">
+      <%= link_to image_tag('icons/facebook.svg', alt: ""), root_path%>
+    </div>
+    <%= form_with method: :get do |form| %>
+      <div class="search">
+        <%= form.text_field :query %>
+        <%= image_tag 'posts/search.png', alt: "", class: "search-icon"%>
+        <%= form.submit "Search"%>
+      </div>
+    <%end%>
+  </div>
+  <div class="btn-group">
+  </div>
+  <!--tab icons-->
+  <div class="tabs">
+    <div class="tab-icon active">
+      <div class="icon">
+        <%= image_tag 'icons/home.svg', alt: ""%>
+      </div>
+    </div>
+    <div class="tab-icon">
+      <div class="icon has-notification">
+        <%= image_tag 'icons/flag.svg', alt: ""%>
+      </div>
+    </div>
+    <div class="tab-icon">
+      <div class="icon">
+        <%= image_tag 'icons/tv.svg', alt: ""%>
+      </div>
+    </div>
+    <div class="tab-icon">
+      <div class="icon">
+        <%= image_tag 'icons/users.svg', alt: ""%>
+      </div>
+    </div>
+    <div class="tab-icon">
+      <div class="icon has-notification">
+        <%= image_tag 'icons/calendar.svg', alt: ""%>
+      </div>
+    </div>
+  </div>
+  <!--right side-->
+  <div class="right-side">
+    <div class="user">
+      <div class="profile">
+        <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+      </div>
+      <h4><%= current_user.email %></h4>
+    </div>
+    <!--icons-->
+    <div class="user-icons">
+      <div class="icon">
+        <%= image_tag 'icons/plus.svg', alt: ""%>
+      </div>
+      <div class="icon has-notification">
+        <%= image_tag 'icons/messenger.svg', alt: ""%>
+      </div>
+      <div class="icon">
+        <%= image_tag 'icons/bell.svg', alt: ""%>
+      </div>
+      <div class="icon" id="nav-dialog">
+        <%= image_tag 'icons/arrow.svg', alt: ""%>
+        <%= render 'layouts/dialog'%>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  let navDiv;
+  let navMenu;
+
+  setTimeout(() => {
+    navDiv = document.getElementById("nav-dialog");
+    navMenu = document.getElementById("dialog-menu");
+    navDiv.onclick = () => {
+      if (navMenu.style.display !== "none") {
+        navMenu.style.display = "none";
+      } else {
+        navMenu.style.display = "block";
+      }
+    };
+  }, 1);
+</script>
+
