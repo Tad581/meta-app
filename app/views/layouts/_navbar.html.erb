@@ -48,7 +48,7 @@
       <div class="profile">
         <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
       </div>
-      <h4><%= current_user.email %></h4>
+      <h4><%= current_user.name %></h4>
     </div>
     <!--icons-->
     <div class="user-icons">
@@ -68,7 +68,6 @@
     </div>
   </div>
 </nav>
-
 <script>
   let navDiv;
   let navMenu;
@@ -85,4 +84,3 @@
     };
   }, 1);
 </script>
-
