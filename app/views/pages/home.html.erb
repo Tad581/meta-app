@@ -22,8 +22,9 @@
           </div>
         </div>
         <div class="menu-item">
-          <%# <div class="item-row">
+          <div class="item-row">
             <%= link_to image_tag('icons/colored-people.svg', alt: "") + 'Friends', request_list_path%>
+          </div>
         </div>
         <div class="menu-item">
           <div class="item-row">
@@ -288,17 +289,16 @@
           <h6 class="title">
             contact
           </h6>
-          <%# <% current_user.followees.each do |friend|%>
-            <%# <% if friend.is_friend(current_user)%> %>
-            <%# <div class="user"> %>
-            <%# <div class="profile"> %>
-            <%# <%= image_tag 'avatar/unknown.jpeg', alt: ""%> %>
-            <%# </div> %>
-            <%# <h4><%= friend.nickname %></h4>
-           %>
-          <%# </div> %>
-          <%# <% end %> %>
-          <%# <% end %> %>
+          <% current_user.followees.each do |friend|%>
+            <% if friend.is_friend(current_user)%>
+              <div class="user">
+                <div class="profile">
+                  <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                </div>
+                <h4><%= friend.name %></h4>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>

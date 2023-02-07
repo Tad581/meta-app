@@ -1459,6 +1459,11 @@ Custom
   font-size: 20px !important;
 }
 
+.search-message {
+  font-size: 18px;
+  color: var(--white);
+}
+
 .search-list .view {
   background-color: var(--accent);
   padding: 0 !important;

@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     get "users", to: "devise/session#new"
   end
   get "user/:id", to: "users#show", as: "user"
-
+  get "/search", to: "pages#search"
+  get "/request_list", to: "follows#request"
+  get "/send_friend_request", to: "follows#send_friend_request"
+  get "/accept_friend_request", to: "follows#send_friend_request"
+  get "/delete_friend_request", to: "follows#delete_friend_request"
+  get "/cancel_friend_request", to: "follows#cancel_friend_request"
   # Defines the root path route ("/")
   # root "articles#index"
 end
