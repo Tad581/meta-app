@@ -4,7 +4,7 @@
     <div class="logo">
       <%= link_to image_tag('avatar/logo.png', alt: ""), root_path%>
     </div>
-    <%= form_with method: :get do |form| %>
+    <%= form_with url: search_path, method: :get do |form| %>
       <div class="search">
         <%= form.text_field :query %>
         <%= image_tag 'posts/search.png', alt: "", class: "search-icon"%>

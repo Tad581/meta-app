@@ -7,4 +7,13 @@ class PagesController < ApplicationController
       @nicknameList << name
     end
   end
+
+  def search
+    @parameters = params[:query].downcase
+    if !@parameters.blank?
+      @search_user = User.all.where("id <> #{current_user.id} and lower(nickname) LIKE '%#{@parameters}%'")
+    else
+      @search_user = User.all.where("id <> #{current_user.id}")
+    end
+  end
 end

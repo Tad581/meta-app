@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :follows
   resources :posts
   resources :rooms
   root "pages#home"
