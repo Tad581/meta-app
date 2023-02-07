@@ -4,4 +4,13 @@ class Post < ApplicationRecord
   has_many :posts, foreign_key: :parent_id
 
   after_create_commit { broadcast_append_to "posts" }
+
+  def is_friend_post(current_user)
+    begin
+      # current_user.followees.find(self.user_id)
+      return true
+    rescue
+      return false
+    end
+  end
 end

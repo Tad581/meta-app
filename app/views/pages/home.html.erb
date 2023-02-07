@@ -1,6 +1,6 @@
-<%= link_to "Start Chatting", rooms_path%>
 <div class="app-container">
-  <%= render "layouts/navbar" %>
+  <!--navbar-->
+  <%= render "layouts/navbar"%>
   <!--content-->
   <div class="wrapper">
     <div class="shortcuts">
@@ -22,6 +22,8 @@
           </div>
         </div>
         <div class="menu-item">
+          <%# <div class="item-row">
+            <%= link_to image_tag('icons/colored-people.svg', alt: "") + 'Friends', request_list_path%>
         </div>
         <div class="menu-item">
           <div class="item-row">
@@ -40,7 +42,7 @@
           </div>
         </div>
         <div class="menu-item">
-          <div class="item-row ">
+          <div class="item-row  border">
             <div class="icon more">
               <%= image_tag 'icons/arrow-down.svg', alt: ""%>
             </div>
@@ -139,6 +141,102 @@
           </div>
         </div>
         <!--post container-->
+        <% @posts.reverse.each do |post| %>
+          <% if  post.user == current_user && post.parent_id.nil? %>
+            <div class="view view-post-container smaller-margin">
+              <div class="view-post">
+                <div class="upper">
+                  <div class="d-flex">
+                    <div class="user">
+                      <div class="profile">
+                        <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                      </div>
+                    </div>
+                    <div class="info">
+                      <h6 class="name">
+                        <%= @nicknameList[@posts.find_index(post)] %>
+                      </h6>
+                      <span class="time">1 hour ago</span>
+                    </div>
+                  </div>
+                  <div class="dots">
+                    <div class="dot"></div>
+                  </div>
+                </div>
+                <div class="desc">
+                  <p><%= post.content%></p>
+                </div>
+                <div class="actions-container">
+                  <div class="action">
+                    <div class="icon">
+                      <%= image_tag 'icons/thumbs-up.svg', alt: ""%>
+                    </div>
+                    <span>
+                      Like
+                    </span>
+                  </div>
+                  <div class="action">
+                    <div class="icon">
+                      <%= image_tag 'icons/comment.svg', alt: ""%>
+                    </div>
+                    <span>
+                      Comment
+                    </span>
+                  </div>
+                  <div class="action">
+                    <div class="icon">
+                      <%= image_tag 'icons/share.svg', alt: ""%>
+                    </div>
+                    <span>
+                      Share
+                    </span>
+                  </div>
+                </div>
+                <div class="comment-list">
+                  <% @posts.reverse.each do |comment| %>
+                    <% if comment.parent_id == post.id%>
+                      <div class="comment-box">
+                        <div class="user">
+                          <div class="profile">
+                            <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                          </div>
+                        </div>
+                        <div class="comment-content">
+                          <h4><%= @nicknameList[@posts.find_index(comment)] %></h4>
+                          <p><%= comment.content%></p>
+                        </div>
+                      </div>
+                      <%# <div class="input">
+                        <%= link_to 'Write your comment ... ', new_post_path(:post => comment), class: "open-post-link"%>
+                      <%# </div> %>
+                    <%end%>
+                  <% end %>
+                </div>
+                <div class="write-comment">
+                  <div class="user">
+                    <div class="profile">
+                      <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                    </div>
+                  </div>
+                  <div class="input">
+                    <%= link_to 'Write your comment ... ', new_post_path(:post => post), class: "open-post-link"%>
+                    <div class="media">
+                      <div class="icon">
+                        <%= image_tag 'icons/camera.svg', alt: ""%>
+                      </div>
+                      <div class="icon">
+                        <%= image_tag 'icons/image.svg', alt: ""%>
+                      </div>
+                      <div class="icon">
+                        <%= image_tag 'icons/smile-2.svg', alt: ""%>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <!--shortcuts 2 -events and chat- -->
@@ -166,7 +264,7 @@
           </div>
         </div>
         <div class="menu-item">
-          <div class="item-row">
+          <div class="item-row  border">
             <div class="icon more">
               <%= image_tag 'icons/arrow-down.svg', alt: ""%>
             </div>
@@ -185,6 +283,22 @@
             </div>
             <h4>It's Diana Berry's birthday </h4>
           </div>
+        </div>
+        <div class="online">
+          <h6 class="title">
+            contact
+          </h6>
+          <%# <% current_user.followees.each do |friend|%>
+            <%# <% if friend.is_friend(current_user)%> %>
+            <%# <div class="user"> %>
+            <%# <div class="profile"> %>
+            <%# <%= image_tag 'avatar/unknown.jpeg', alt: ""%> %>
+            <%# </div> %>
+            <%# <h4><%= friend.nickname %></h4>
+           %>
+          <%# </div> %>
+          <%# <% end %> %>
+          <%# <% end %> %>
         </div>
       </div>
     </div>
