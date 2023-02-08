@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     render "rooms/index"
   end
 
+  def profile
+    @user = User.find(params[:user])
+  end
+
   private
 
   def get_name(user1, user2)

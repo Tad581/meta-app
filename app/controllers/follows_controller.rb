@@ -5,7 +5,7 @@ class FollowsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def delete_friend_request
+  def delete_friend_request #xoa ban
     @follower = current_user.followers.delete(params[:id])
     redirect_back(fallback_location: root_path)
   end
@@ -16,7 +16,7 @@ class FollowsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def cancel_friend_request
+  def cancel_friend_request #huy ket ban
     current_user.followees.delete(params[:id])
     redirect_back(fallback_location: root_path)
   end

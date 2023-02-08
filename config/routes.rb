@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/accept_friend_request", to: "follows#send_friend_request"
   get "/delete_friend_request", to: "follows#delete_friend_request"
   get "/cancel_friend_request", to: "follows#cancel_friend_request"
+  get "/profile", to: "users#profile"
   # Defines the root path route ("/")
   # root "articles#index"
 end

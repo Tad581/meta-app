@@ -28,6 +28,7 @@
                     <% if current_user.friend_status(user.id) == "friend"%>
                       <div class="friend-follow">
                         <%= image_tag 'posts/messenger.png', alt: "" %>
+                        <%= link_to "Chat", rooms_path %>
                       </div>
                     <% elsif current_user.friend_status(user.id) == "not followed" %>
                       <div class="friend-follow">
