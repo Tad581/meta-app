@@ -1681,9 +1681,11 @@ Friend List
 Chat Room
 ========================*/
 .msg-form {
-  width: 100%;
+  width: calc( 100% - 20px );
   height: 56px;
   padding: 10px;
+  position: absolute;
+  bottom: 70px;
 }
 
 #users {
@@ -1692,6 +1694,11 @@ Chat Room
 
 #single_room {
   height: calc(100vh - 150px);
+}
+
+#single_room h4 {
+  font-size: 25px;
+  color: white;
 }
 
 #messages {
@@ -1704,7 +1711,6 @@ Chat Room
   height: 100vh;
   margin-right: 0px !important;
   overflow: hidden;
-  z-index: -1 !important;
 }
 
 #side_panel {
@@ -1719,9 +1725,8 @@ Chat Room
   background-color: var(--accent);
   padding-top: 80px;
   padding-left: 20px;
-  height: 100vh;
+  height: auto;
   margin-right: 0px !important;
-  overflow: hidden !important;
 }
 
 .msg-content {
@@ -1747,6 +1752,38 @@ Chat Room
 
 .username {
   overflow: hidden;
+}
+
+#single_room .room_title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid var(--border-bottom);
+}
+
+#single_room .room_title .chat_pfp {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
+}
+
+#single_room .room_title h4 {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+#chat-text {
+  background-color: var(--lighter);
+  border: none;
+  color: var(--white);
+}
+
+#chat-text:focus {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .chat_pfp {
