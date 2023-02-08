@@ -1,20 +1,22 @@
 <%= form_with(model: post, url: posts_path) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <div class="post-form">
+    <% if post.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <ul>
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+      <%= form.text_field :content, placeholder: "What in your mind?",  class: "open-post-link" %>
+      <%= form.number_field :user_id, id: :post_user_id,  value: current_user.id, type: "hidden"%>
+      <%= form.number_field :parent_id, id: :parent_id,  value: nil, type: "hidden"%>
     </div>
-  <% end %>
-  <div>
-    <%= form.text_area :content, placeholder: "What are you thinking?" %>
-    <%= form.number_field :user_id, id: :post_user_id,  value: current_user.id, type: "hidden"%>
-    <%= form.number_field :parent_id, id: :parent_id,  value: @parent_id, type: "hidden"%>
-  </div>
-  <div>
-    <%= form.submit %>
+    <div>
+      <%= form.submit "Post" %>
+    </div>
   </div>
 <% end %>

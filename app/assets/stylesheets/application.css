@@ -980,7 +980,6 @@ nav .right-side .user-icons .icon.has-notification::after {
 .wrapper .shortcuts-2 .online {
   margin-top: 10px;
   padding: 10px 0;
-  border-top: 1px solid var(--border-bottom);
 }
 
 .wrapper .shortcuts-2 .online h6 {
@@ -1594,6 +1593,25 @@ Create Post
   color: var(--white);
 }
 
+.post-form {
+  display: flex;
+  justify-content: start;
+}
+
+.post-form div:first-child #post_content {
+  width: 500px !important;
+}
+
+.post-form div:nth-child(2) input {
+  width: 110px !important;
+  background-color: var(--base-blue) !important;
+  color: white !important;
+  border: none;
+  border-radius: 100px;
+  padding: 12px;
+  margin-left: 10px;
+  font-size: 0.88rem;
+}
 /*=======================
 Friend List
 ========================*/
@@ -1843,7 +1861,7 @@ Chat Room
   padding-bottom: 0px;
   margin-bottom: 0px;
   font-size: 12px;
-  color: var(--border-bottom)
+  color: var(--border-bottom);
 }
 
 .cont-default {
