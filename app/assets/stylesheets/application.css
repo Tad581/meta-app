@@ -157,6 +157,7 @@ h6.title {
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 /* nav */
@@ -205,7 +206,8 @@ nav .left-side .logo img {
   object-fit: cover;
 }
 
-nav .left-side .search {
+nav .left-side .search,
+#chatroom_container #side_panel .search {
   border-radius: 100px;
   width: 250px;
   position: relative;
@@ -216,7 +218,8 @@ nav .left-side .search {
   flex-direction: row;
 }
 
-nav .left-side .search input {
+nav .left-side .search input,
+#chatroom_container #side_panel .search input {
   width: 100%;
   border: none;
   padding: 14px;
@@ -1696,6 +1699,7 @@ Chat Room
 #room_container {
   height: 100vh;
   margin-right: 0px !important;
+  overflow: hidden;
 }
 
 #side_panel {
@@ -1706,10 +1710,12 @@ Chat Room
   margin-bottom: 55px;
 }
 #chatroom_container {
+  background-color: var(--accent);
+  padding-top: 80px;
+  padding-left: 20px;
   height: 100vh;
   margin-right: 0px !important;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden !important;
 }
 
 .msg-content {
@@ -1723,7 +1729,7 @@ Chat Room
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: #555555;
+  background-color: var(--accent);
   padding: 10px;
 }
 
