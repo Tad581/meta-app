@@ -3,9 +3,4 @@
 <% else %>
   <% isActive = '' %>
 <% end %>
-<ol class="list-group-item d-flex align-items-center justify-content-between user_list_item <%= isActive %>">
-  <div>
-    <%= link_to image_tag(user.chat_avatar, class: 'chat_pfp'), user %>
-  </div>
-  <%= link_to user.email, user, class:'ms-2 me-auto username', data: {turbo: "false"}%>
-</ol>
+<%= link_to image_tag(user.chat_avatar, class: 'chat_pfp') + user.name, user, class: "list-group-item d-flex align-items-center justify-content-start user_list_item", data: {turbo: "false"}%>

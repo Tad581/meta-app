@@ -1686,6 +1686,10 @@ Chat Room
   padding: 10px;
 }
 
+#users {
+  padding-top: 10px;
+}
+
 #single_room {
   height: calc(100vh - 150px);
 }
@@ -1700,6 +1704,7 @@ Chat Room
   height: 100vh;
   margin-right: 0px !important;
   overflow: hidden;
+  z-index: -1 !important;
 }
 
 #side_panel {
@@ -1710,6 +1715,7 @@ Chat Room
   margin-bottom: 55px;
 }
 #chatroom_container {
+  position: relative;
   background-color: var(--accent);
   padding-top: 80px;
   padding-left: 20px;
@@ -1744,14 +1750,30 @@ Chat Room
 }
 
 .chat_pfp {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin-right: 10px;
 }
+
+.user_list_item img {
+  margin-right: 30px;
+}
+
 .user_list_item {
-  height: 55px;
-  background-color: #343a40 !important;
+  background-color: transparent !important;
+  padding: 10px 20px !important;
+  border: none;
+  color: var(--white);
+  text-transform: capitalize;
+}
+.user_list_item:hover {
+  background-color: var(--lighter) !important;
+  border-radius: 10px;
+}
+.user_list_item a:last-child {
+  text-transform: capitalize;
+  padding-left: 30px;
 }
 .room_list_item {
   height: 55px;
