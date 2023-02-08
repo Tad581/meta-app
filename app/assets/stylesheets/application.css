@@ -716,6 +716,7 @@ nav .right-side .user-icons .icon.has-notification::after {
   font-size: 0.99rem;
   font-weight: 500;
   text-transform: capitalize;
+  margin: 0 !important;
 }
 
 .posts .view .view-post .upper .d-flex .user {
@@ -880,7 +881,7 @@ nav .right-side .user-icons .icon.has-notification::after {
   text-transform: capitalize;
   font-size: 15px;
   color: var(--white);
-  margin: 0 0 0 15px;
+  margin: 5px 0 5px 15px;
 }
 
 .posts .view .view-post .write-comment .input input {
