@@ -13,9 +13,9 @@
             <div class="buttons">
               <% if @user.id == current_user.id %>
                 <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-outline-primary px-4"%>
-              <% elsif current_user.friend_status(user.id) == "friend"%>
+              <% elsif current_user.friend_status(@user.id) == "friend"%>
                 <%= link_to "Unfriend", delete_friend_request_path(:id => @user.id), class: "btn btn-outline-primary px-4" %>
-              <% elsif current_user.friend_status(user.id) == "not followed" %>
+              <% elsif current_user.friend_status(@user.id) == "not followed" %>
                 <%= link_to "Add friend", send_friend_request_path(:id => @user.id), class: "btn btn-outline-primary px-4" %>
               <% else %>
                 <%= link_to "Cancel request", cancel_friend_request_path(:id => @user.id), class: "btn btn-outline-primary px-4" %>

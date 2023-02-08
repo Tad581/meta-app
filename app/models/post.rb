@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   def is_friend_post(current_user)
     begin
-      # current_user.followees.find(self.user_id)
+      current_user.followees.find(self.user_id)
       return true
     rescue
       return false

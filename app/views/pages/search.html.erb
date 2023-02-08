@@ -21,7 +21,7 @@
                 <% @search_user.each do |user| %>
                   <div class="user search-user">
                     <div class="profile">
-                      <%= image_tag user.avatar_thumbnail, alt: ""%>
+                      <%= link_to image_tag(user.avatar_thumbnail, alt: ""), profile_path(:user => user) %>
                     </div>
                     <h4><%= user.name %>
                     </h4>

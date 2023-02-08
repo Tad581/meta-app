@@ -14,7 +14,6 @@
  *= require_self
  */
 /* import font */
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 
 /*  variables and defaul css */
 :root {
@@ -34,8 +33,8 @@
 
 body,
 html {
-  font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+   overflow-x: hidden;
   background-color: var(--primary);
 }
 
@@ -882,6 +881,10 @@ nav .right-side .user-icons .icon.has-notification::after {
   font-size: 15px;
   color: var(--white);
   margin: 5px 0 5px 15px;
+}
+
+.posts .view .view-post .comment-list .comment-box .comment-content p {
+  text-transform: none;
 }
 
 .posts .view .view-post .write-comment .input input {
