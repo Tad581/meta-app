@@ -1711,6 +1711,7 @@ Chat Room
 #room_container {
   height: auto;
   margin-right: 0px !important;
+  text-align: center;
 }
 
 #side_panel {
@@ -1791,6 +1792,13 @@ Chat Room
 }
 
 .chat_pfp {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user_list_item .chat_pfp {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1828,8 +1836,23 @@ Chat Room
   margin-bottom: 0px;
 }
 .time {
+  position: absolute;
+  left: 70px;
   padding-top: 0px;
-  margin-top: 0px;
+  margin-top: 5px;
   padding-bottom: 0px;
   margin-bottom: 0px;
+  font-size: 12px;
+  color: var(--border-bottom)
+}
+
+.cont-default {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 10px;
+}
+
+.cont-default .message-box {
+  margin: 0;
 }

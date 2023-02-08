@@ -14,10 +14,14 @@
     <%= ".msg-#{current_user&.id}" %> {
       background-color: #007bff !important;
       padding: 10px;
+      margin-right: 10px !important;
       }
       <%= ".cont-#{current_user&.id}" %> {
       display: flex;
       justify-content: flex-end
+      }
+      <%= ".cont-#{current_user&.id}" %> img{
+        display: none;
       }
   </style>
   <body>
