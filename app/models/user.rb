@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :followers, through: :following_users
 
   has_many :posts
+  has_many :messages
 
   def not_following
     @following = self.followees
