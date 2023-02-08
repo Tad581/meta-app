@@ -1,10 +1,13 @@
 class PagesController < ApplicationController
   def home
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     @nicknameList = []
+    @thumbnailList = []
     @posts.each do |post|
       name = User.find(post.user_id).name
+      avatar = User.find(post.user_id).avatar_thumbnail
       @nicknameList << name
+      @thumbnailList << avatar
     end
   end
 

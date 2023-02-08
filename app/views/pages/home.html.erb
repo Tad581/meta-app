@@ -8,7 +8,7 @@
         <div class="menu-item">
           <div class="user">
             <div class="profile">
-              <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+              <%= image_tag current_user.avatar_thumbnail, alt: "" %>
             </div>
             <h4><%= current_user.name %></h4>
           </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="menu-item">
           <div class="item-row">
-              <%= link_to image_tag('icons/colored-messenger.svg', alt: "") + 'Messenger', rooms_path%>
+            <%= link_to image_tag('icons/colored-messenger.svg', alt: "") + 'Messenger', rooms_path%>
           </div>
         </div>
         <div class="menu-item">
@@ -110,7 +110,7 @@
           <div class="input">
             <div class="user">
               <div class="profile">
-                <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                <%= image_tag current_user.avatar_thumbnail, alt: "" %>
               </div>
             </div>
             <%= link_to 'Bạn đang nghĩ gì', new_post_path, class: "open-post-link" %>
@@ -139,7 +139,7 @@
           </div>
         </div>
         <!--post container-->
-        <% @posts.reverse.each do |post| %>
+        <% @posts.each do |post| %>
           <% if  post.user == current_user && post.parent_id.nil? %>
             <div class="view view-post-container smaller-margin">
               <div class="view-post">
@@ -147,7 +147,7 @@
                   <div class="d-flex">
                     <div class="user">
                       <div class="profile">
-                        <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                        <%= image_tag @thumbnailList[@posts.find_index(post)], alt: "" %>
                       </div>
                     </div>
                     <div class="info">
@@ -196,7 +196,7 @@
                       <div class="comment-box">
                         <div class="user">
                           <div class="profile">
-                            <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                            <%= image_tag @thumbnailList[@posts.find_index(comment)], alt: "" %>
                           </div>
                         </div>
                         <div class="comment-content">
@@ -213,7 +213,7 @@
                 <div class="write-comment">
                   <div class="user">
                     <div class="profile">
-                      <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                      <%= image_tag current_user.avatar_thumbnail, alt: "" %>
                     </div>
                   </div>
                   <div class="input">
@@ -290,7 +290,7 @@
             <% if friend.is_friend(current_user)%>
               <div class="user">
                 <div class="profile">
-                  <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                  <%# <%= image_tag(friend.avatar_thumbnail), alt: ""%> %>
                 </div>
                 <h4><%= friend.name %></h4>
               </div>

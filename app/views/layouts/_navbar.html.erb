@@ -46,7 +46,7 @@
   <div class="right-side">
     <div class="user">
       <div class="profile">
-        <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+        <%= image_tag current_user.avatar_thumbnail, alt: ""%>
       </div>
       <h4><%= current_user.name %></h4>
     </div>

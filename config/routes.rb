@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/show'
   resources :follows
   resources :posts
   resources :rooms do
     resources :messages
   end
   root "pages#home"
-  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  devise_scope :user do
-    get "users", to: "devise/session#new"
-  end
+  devise_for :users, controllers: {
+                       sesions: "users/sessions",
+                       registrations: "users/registrations",
+                     }
   get "user/:id", to: "users#show", as: "user"
   get "/search", to: "pages#search"
   get "/request_list", to: "follows#request"

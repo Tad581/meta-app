@@ -21,7 +21,7 @@
                 <% @search_user.each do |user| %>
                   <div class="user search-user">
                     <div class="profile">
-                      <%= image_tag 'avatar/unknown.jpeg', alt: ""%>
+                      <%= image_tag user.avatar_thumbnail, alt: ""%>
                     </div>
                     <h4><%= user.name %>
                     </h4>
