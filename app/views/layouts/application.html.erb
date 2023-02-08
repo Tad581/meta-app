@@ -10,6 +10,16 @@
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag 'avatar/logo.png' %>
   </head>
+  <style>
+    <%= ".msg-#{current_user&.id}" %> {
+      background-color: #007bff !important;
+      padding: 10px;
+      }
+      <%= ".cont-#{current_user&.id}" %> {
+      display: flex;
+        justify-content: flex-end
+      }
+  </style>
   <body>
     <%= yield %>
   </body>
