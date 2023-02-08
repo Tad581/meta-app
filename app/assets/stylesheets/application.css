@@ -1681,15 +1681,16 @@ Friend List
 Chat Room
 ========================*/
 .msg-form {
-  width: calc( 100% - 20px );
+  width: calc(100% - 80px);
   height: 56px;
   padding: 10px;
   position: absolute;
-  bottom: 70px;
+  bottom: 130px;
 }
 
 #users {
   padding-top: 10px;
+  height: calc(100vh);
 }
 
 #single_room {
@@ -1702,31 +1703,33 @@ Chat Room
 }
 
 #messages {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 230px);
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 #room_container {
-  height: 100vh;
+  height: auto;
   margin-right: 0px !important;
-  overflow: hidden;
 }
 
 #side_panel {
   height: 100vh;
   margin-right: 0px !important;
+  overflow: scroll;
   overflow-x: hidden;
-  overflow-y: scroll;
   margin-bottom: 55px;
+  padding-bottom: 30px;
 }
+
 #chatroom_container {
   position: relative;
   background-color: var(--accent);
   padding-top: 80px;
   padding-left: 20px;
-  height: auto;
+  height: calc(100vh - 2px);
   margin-right: 0px !important;
+  overflow: hidden;
 }
 
 .msg-content {
@@ -1736,11 +1739,12 @@ Chat Room
 .message-box {
   word-wrap: break-word;
   width: fit-content;
-  max-width: 40%;
+  max-width: 60%;
+  min-width: 20%;
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: var(--accent);
+  background-color: var(--lighter);
   padding: 10px;
 }
 
