@@ -725,6 +725,7 @@ nav .right-side .user-icons .icon.has-notification::after {
 .posts .view .view-post .upper .info span {
   color: var(--font);
   font-size: 0.77rem;
+  margin-left: 30px;
 }
 
 .posts .view .upper h6,
@@ -773,8 +774,8 @@ nav .right-side .user-icons .icon.has-notification::after {
 
 .posts .view .view-post .desc p {
   color: var(--white);
-  margin: 20px 0 10px 0;
-  font-size: 00.88rem;
+  margin: 35px 0 10px 20px;
+  font-size: 20px;
 }
 
 .posts .view .view-post .post-img {
@@ -867,7 +868,7 @@ nav .right-side .user-icons .icon.has-notification::after {
   background-color: var(--lighter);
   border-radius: 15px;
   padding: 5px 20px 5px 0;
-  margin: 10px 0 0 10px;
+  margin: 20px 0 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
