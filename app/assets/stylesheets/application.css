@@ -778,6 +778,20 @@ nav .right-side .user-icons .icon.has-notification::after {
   font-size: 20px;
 }
 
+.posts .view .view-post .desc .desc-image {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.posts .view .view-post .desc img {
+  max-width: 560px;
+  min-width: 280px;
+  margin: auto;
+  height: auto;
+  border-radius: 5px;
+}
+
 .posts .view .view-post .post-img {
   height: 40vh;
   width: 100%;
@@ -1604,7 +1618,34 @@ Create Post
 }
 
 .post-form div:first-child #post_content {
-  width: 500px !important;
+  width: 410px !important;
+}
+
+.post-form div:first-child #post_image {
+  position: absolute;
+  right: 175px;
+  background-color: var(--lighter);
+  border: none;
+  border-radius: 100px;
+  padding: 12px;
+  width: 50px;
+  height: 40px;
+  margin-left: 10px;
+  color: var(--font);
+  font-size: 0.88rem;
+}
+
+.post-form div:first-child #post_image::file-selector-button {
+  background-color: transparent;
+  border: none;
+  color: transparent;
+}
+
+.post-form div:first-child img {
+  position: absolute;
+  right: 190px;
+  top: 65px;
+  width: 20px;
 }
 
 .post-form div:nth-child(2) input {

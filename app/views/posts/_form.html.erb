@@ -12,6 +12,8 @@
     <% end %>
     <div>
       <%= form.text_field :content, placeholder: "What in your mind?",  class: "open-post-link" %>
+      <%= form.file_field :image, accept: 'image/png, image/jpeg, image/jpg' %>
+      <%= image_tag 'posts/photo' %>
       <%= form.number_field :user_id, id: :post_user_id,  value: current_user.id, type: "hidden"%>
       <%= form.number_field :parent_id, id: :parent_id,  value: nil, type: "hidden"%>
     </div>

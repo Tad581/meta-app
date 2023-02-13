@@ -162,7 +162,12 @@
                   </div>
                 </div>
                 <div class="desc">
-                  <p><%= post.content%></p>
+                  <p><%= post.content %></p>
+                  <div class="desc-image">
+                    <% if post.image.attached? %>
+                      <%= image_tag post.image %>
+                    <% end %>
+                  </div>
                 </div>
                 <div class="actions-container">
                   <div class="action">
