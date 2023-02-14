@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :parent, class_name: "Post", optional: true
   has_many :posts, foreign_key: :parent_id
+  has_many :likes
 
   has_one_attached :image
 
@@ -14,5 +15,9 @@ class Post < ApplicationRecord
     rescue
       return false
     end
+  end
+
+  def is_liked(current_user)
+    self.likes.find_by(user_id: current_user.id)
   end
 end

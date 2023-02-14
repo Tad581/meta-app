@@ -838,6 +838,22 @@ nav .right-side .user-icons .icon.has-notification::after {
   font-size: 0.88rem;
 }
 
+.posts .view .view-post .actions-container .action span a{
+  color: var(--font);
+}
+
+.posts .view .view-post .actions-container .action span a:hover{
+  color: var(--font) !important;
+}
+
+.posts .view .view-post .actions-container .action span .active{
+  color: var(--base-blue) !important;
+}
+
+.posts .view .view-post .actions-container .action span .active:hover{
+  color: var(--base-blue) !important;
+}
+
 .posts .view .view-post .write-comment,
 .posts .view .view-post .write-comment .input,
 .posts .view .view-post .write-comment .input .media {

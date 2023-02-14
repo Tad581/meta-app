@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "/delete_friend_request", to: "follows#delete_friend_request"
   get "/cancel_friend_request", to: "follows#cancel_friend_request"
   get "/profile", to: "users#profile"
+  get "/like", to: "likes#like_a_post"
+  get "/dislike", to: "likes#dislike_a_post"
   # Defines the root path route ("/")
   # root "articles#index"
 end
