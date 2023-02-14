@@ -1663,10 +1663,10 @@ Friend List
 ========================*/
 .app-container .friend-list {
   position: absolute;
-  right: 0;
+  left: 400px;
   top: 130px;
   height: auto;
-  width: 70%;
+  width: 65%;
 }
 
 .app-container .friend-list h4 {
