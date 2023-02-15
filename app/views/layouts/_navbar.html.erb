@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="tab-icon">
-      <div class="icon has-notification">
+      <div class="icon">
         <%= image_tag 'icons/flag.svg', alt: ""%>
       </div>
     </div>
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="tab-icon">
-      <div class="icon has-notification">
+      <div class="icon">
         <%= image_tag 'icons/calendar.svg', alt: ""%>
       </div>
     </div>
@@ -55,8 +55,8 @@
       <div class="icon">
         <%= image_tag 'icons/plus.svg', alt: ""%>
       </div>
-      <div class="icon has-notification">
-        <%= image_tag 'icons/messenger.svg', alt: ""%>
+      <div class="icon">
+        <%= link_to image_tag('icons/messenger.svg', alt: ""), rooms_path%>
       </div>
       <div class="icon">
         <%= image_tag 'icons/bell.svg', alt: ""%>

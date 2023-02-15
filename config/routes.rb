@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/profile", to: "users#profile"
   get "/like", to: "likes#like_a_post"
   get "/dislike", to: "likes#dislike_a_post"
+  get "/destroy_post", to: "posts#destroy"
   # Defines the root path route ("/")
   # root "articles#index"
 end

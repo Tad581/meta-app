@@ -48,59 +48,6 @@
           </div>
         </div>
       </div>
-      <div class="second-col">
-        <h6 class="title">
-          your shortcuts
-        </h6>
-        <div class="menu-item">
-          <div class="item-row">
-            <div class="icon">
-              <%= image_tag 'stories/st-1.jpeg', alt: ""%>
-            </div>
-            <h4>Designers house </h4>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="item-row">
-            <div class="icon">
-              <%= image_tag 'stories/st-2.jpeg', alt: ""%>
-            </div>
-            <h4>Script house </h4>
-          </div>
-          <div class="menu-item">
-            <div class="item-row">
-              <div class="icon">
-                <%= image_tag 'stories/page-1.jpg', alt: ""%>
-              </div>
-              <h4>ui ux Designers workshop </h4>
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="item-row">
-              <div class="icon">
-                <%= image_tag 'stories/st-3.jpeg', alt: ""%>
-              </div>
-              <h4>netflix movies recommends </h4>
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="item-row">
-              <div class="icon">
-                <%= image_tag 'stories/page-2.jpg', alt: ""%>
-              </div>
-              <h4>the future </h4>
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="item-row">
-              <div class="icon">
-                <%= image_tag 'stories/page-3.jpeg', alt: ""%>
-              </div>
-              <h4> smart </h4>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <!--posts-->
     <div class="posts">
@@ -157,9 +104,34 @@
                       <span class="time"><%= time_ago_in_words(post.created_at) %> ago </span>
                     </div>
                   </div>
-                  <div class="dots">
-                    <div class="dot"></div>
-                  </div>
+                  <% if post.user_id == current_user.id %>
+                    <div class="dots" id="open-post-<%=post.id%>">
+                      <div class="dot"></div>
+                      <%= render "layouts/post_action", post: post %>
+                    </div>
+                    <script>
+                      if (typeof openDiv === 'undefined') {
+                        let openDiv;
+                        let actionDiv;
+
+                        setTimeout(() => {
+                        console.log("runnnn")
+                        openDiv = document.getElementById("open-post-<%=post.id%>");
+                        actionDiv = document.getElementById("post-action-<%=post.id%>");
+                        if (typeof open.onclick !== "function") {
+                              openDiv.onclick = () => {
+                                console.log("runnn")
+                                if (actionDiv.style.display !== "none") {
+                                  actionDiv.style.display = "none";
+                              } else {
+                                actionDiv.style.display = "block";
+                              }
+                            };
+                          }
+                        }, 1);
+                      }
+                    </script>
+                  <% end %>
                 </div>
                 <div class="desc">
                   <p><%= post.content %></p>
@@ -248,41 +220,10 @@
     </div>
     <!--shortcuts 2 -events and chat- -->
     <div class="shortcuts shortcuts-2">
-      <div class="second-col first-col">
-        <div class="menu-item">
-          <div class="upper">
-            <h6>Your pages</h6>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="item-row">
-            <div class="icon">
-              <%= image_tag 'stories/st-2.jpeg', alt: ""%>
-            </div>
-            <h4>Script house </h4>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="item-row">
-            <div class="icon">
-              <%= image_tag 'stories/st-1.jpeg', alt: ""%>
-            </div>
-            <h4>Bibs ui design </h4>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="item-row  border">
-            <div class="icon more">
-              <%= image_tag 'icons/arrow-down.svg', alt: ""%>
-            </div>
-            <h4>see more </h4>
-          </div>
-        </div>
-      </div>
-      <div class="second-col">
+      <div class="second-col right-side">
         <div class="online">
           <h6 class="title">
-            contact
+            contacts
           </h6>
           <% current_user.followees.each do |friend|%>
             <% if friend.is_friend(current_user)%>

@@ -1,0 +1,10 @@
+<div id="post-action-<%=post.id%>" class="post-action-default">
+  <ul>
+    <ol class="dialog-menu-item">
+      <%= link_to "Edit this post", edit_post_path(post), class:"nav-link"  %>
+    </ol>
+    <ol class="dialog-menu-item">
+      <%= link_to 'Delete this post', destroy_post_path(:id => post.id), class:"nav-link" %>
+    </ol>
+  </ul>
+</div>

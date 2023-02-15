@@ -33,8 +33,8 @@
 
 body,
 html {
-  font-family: 'Roboto', sans-serif;
-   overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
   background-color: var(--primary);
 }
 
@@ -331,6 +331,17 @@ nav .right-side .user-icons .icon img {
   width: 40%;
 }
 
+nav .right-side .user-icons .icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .right-side .user-icons .icon a img {
+  height: 70%;
+  width: 70%;
+}
+
 nav .right-side .user-icons .icon.has-notification::after {
   content: "12";
   position: absolute;
@@ -388,6 +399,10 @@ nav .right-side .user-icons .icon.has-notification::after {
 /* .wrapper .shortcuts .first-col, .wrapper .shortcuts .second-col {
   padding: 10px;
 } */
+
+.wrapper .shortcuts .right-side {
+  margin-right: 50px;
+}
 
 .wrapper .shortcuts .first-col .menu-item:last-of-type .item-row .icon {
   background-color: var(--lighter);
@@ -838,19 +853,19 @@ nav .right-side .user-icons .icon.has-notification::after {
   font-size: 0.88rem;
 }
 
-.posts .view .view-post .actions-container .action span a{
+.posts .view .view-post .actions-container .action span a {
   color: var(--font);
 }
 
-.posts .view .view-post .actions-container .action span a:hover{
+.posts .view .view-post .actions-container .action span a:hover {
   color: var(--font) !important;
 }
 
-.posts .view .view-post .actions-container .action span .active{
+.posts .view .view-post .actions-container .action span .active {
   color: var(--base-blue) !important;
 }
 
-.posts .view .view-post .actions-container .action span .active:hover{
+.posts .view .view-post .actions-container .action span .active:hover {
   color: var(--base-blue) !important;
 }
 
@@ -1203,16 +1218,32 @@ Login page
 /*=======================
 Navbar Dialog
 ========================*/
-#dialog-menu {
+#dialog-menu, .post-action-default {
   display: none;
-  height: 462px;
+  height: auto;
   width: 300px;
-  background-color: var(--accent);
+  padding: 10px 10px 0;
+  background-color: var(--lighter);
   position: absolute;
   top: 50px;
   right: 10px;
   z-index: 10000;
   border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.post-action-default {
+  top: 20px;
+}
+
+#dialog-menu a, .post-action-default a{
+  color: var(--font) !important;
+}
+
+#dialog-menu a:hover, .post-action-default a:hover{
+  background-color: var(--accent);
+  border-radius: 20px;
 }
 
 /*=======================
