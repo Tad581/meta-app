@@ -60,7 +60,30 @@
                 <%= link_to image_tag(current_user.avatar_thumbnail, alt: "") + current_user.name, profile_path(:user => current_user) %>
               </div>
             </div>
-            <%= render 'posts/form', post: @post%>
+            <%= form_with(model: @post, url: posts_path) do |form| %>
+              <div class="post-form">
+                <% if @post.errors.any? %>
+                  <div style="color: red">
+                    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+                    <ul>
+                      <% @post.errors.each do |error| %>
+                        <li><%= error.full_message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                <div>
+                  <%= form.text_field :content, placeholder: "What in your mind?",  class: "open-post-link" %>
+                  <%= form.file_field :image, accept: 'image/png, image/jpeg, image/jpg' %>
+                  <%= image_tag 'posts/photo' %>
+                  <%= form.number_field :user_id, id: :post_user_id,  value: current_user.id, type: "hidden"%>
+                  <%= form.number_field :parent_id, id: :parent_id,  value: nil, type: "hidden"%>
+                </div>
+                <div>
+                  <%= form.submit "Post" %>
+                </div>
+              </div>
+            <% end %>
           </div>
           <div class="media">
             <div class="category">

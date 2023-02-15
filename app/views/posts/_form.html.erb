@@ -1,24 +1,18 @@
-<%= form_with(model: post, url: posts_path) do |form| %>
-  <div class="post-form">
-    <% if post.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-        <ul>
-          <% post.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <div>
-      <%= form.text_field :content, placeholder: "What in your mind?",  class: "open-post-link" %>
-      <%= form.file_field :image, accept: 'image/png, image/jpeg, image/jpg' %>
-      <%= image_tag 'posts/photo' %>
+<div class="form-box edit-form-box">
+  <%= form_with(model: post, url: posts_path) do |form| %>
+    <%= image_tag post.image, class: "desc-image"%>
+    <div class="field">
+      <%= form.file_field :image %>
+    </div>
+    <div class="field">
+      <%= form.text_area :content, value: post.content %>
+    </div>
+    <div class="field">
       <%= form.number_field :user_id, id: :post_user_id,  value: current_user.id, type: "hidden"%>
-      <%= form.number_field :parent_id, id: :parent_id,  value: nil, type: "hidden"%>
     </div>
-    <div>
-      <%= form.submit "Post" %>
+    <div class="field">
+      <%= form.number_field :parent_id, id: :parent_id,  value: @parent_id, type: "hidden"%>
     </div>
-  </div>
-<% end %>
+    <%= form.submit 'Update this post', :class => "edit-submit" %>
+  <% end %>
+</div>

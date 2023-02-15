@@ -797,6 +797,46 @@ nav .right-side .user-icons .icon.has-notification::after {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  max-width: none !important;
+}
+
+.edit-form-box {
+  background-color: var(--lighter) !important;
+  margin: 0 !important;
+  width: auto !important;
+  max-width: 600px !important;
+}
+
+.edit-form-box .field {
+  border: none !important;
+  width: auto !important;
+  max-width: 600px !important;
+}
+
+.edit-form-box .field #post_image {
+  border: none !important;
+  background-color: var(--accent);
+  margin-top: 30px;
+  color: var(--font);
+}
+
+.edit-form-box .field textarea {
+  width: 100%;
+  background-color: var(--accent);
+  color: white;
+  border: none !important;
+}
+
+.edit-submit {
+  background-color: var(--base-blue);
+  color: var(--white);
+  border: none !important;
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+.desc-image {
+  max-width: 500px;
 }
 
 .posts .view .view-post .desc img {
